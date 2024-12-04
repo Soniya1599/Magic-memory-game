@@ -1,0 +1,37 @@
+.card {
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 6px;
+}
+
+/*12.(4) front of card - the picture */
+.card .front {
+    position: absolute; /* absolute to the card which is relative that means front will sit to the top of the back of card.*/
+    /* But by default we want it to be hidden behind back of card so instead of setting display to null,
+    we will hide it via rotating it to the 90 degree to Y direction */
+    transform:rotateY(90deg) ;
+    transition: all ease-in 0.2s;
+}
+
+.flipped .front {
+    transform: rotateY(0deg); /* It will rotate back to 0 deg into Y direction and card will showup again. */
+    transition-delay: 0.2s;
+}
+
+/* Study how the trandform, transition, and transition-delay properties works together */
+
+/*12.(6) back of card - cover */
+.card .back {
+    transition: all ease-in 0.2s;  
+    transition-delay: 0.2s;
+}
+
+.flipped .back {
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}
